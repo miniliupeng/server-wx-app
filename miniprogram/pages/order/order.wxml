@@ -1,0 +1,22 @@
+<van-tabs active="{{ active }}" bind:change="onChange">
+  <van-tab title="待接单">
+    <view class="item">
+      <van-cell title="{{item.estimateTime}} {{estimatePeroid}}" />
+      <view class="content">
+        <view class="item-row">上门时间 {{item.estimateTime}} {{estimatePeroid}}
+          <van-tag type="warning">标签</van-tag>
+        </view>
+        <view class="item-row">服务地址 {{item.address}}</view>
+      </view>
+      <van-divider hairline custom-style="padding:0px 16px;margin: 0px" />
+      <view class="item-row-opt">
+        <van-button class="btn" plain type="primary" size="mini">接单</van-button>
+        <van-button class="btn" plain type="primary" size="mini">联系客户</van-button>
+        <van-button class="btn" plain type="primary" size="mini">退回</van-button>
+      </view>
+    </view>
+  </van-tab>
+  <van-tab title="待上门">内容 2</van-tab>
+  <van-tab title="服务中">内容 3</van-tab>
+  <van-tab title="已办结">内容 4</van-tab>
+</van-tabs>

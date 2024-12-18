@@ -1,0 +1,55 @@
+<!--pages/my/my.wxml-->
+<view class="container">
+  <!-- 顶部展示图 -->
+  <view class="top-show">
+    <image mode="widthFix" class="top-show-img" src="/assets/images/banner.jpg"></image>
+  </view>
+
+  <view class="bottom-show">
+    <!-- 未登录面板 -->
+    <view wx:if="{{ !token }}" class="user-container section" bindtap="toLoginPage">
+      <view class="avatar-container">
+        <image src="/assets/images/avatar.png"></image>
+        <view class="no-login">
+          <text class="ellipsis">未登录</text>
+          <text>点击授权登录</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 登录以后得面板 -->
+    <view wx:else class="user-container section">
+      <view class="avatar-container">
+        <image src="{{ userInfo.headimgurl }}"></image>
+        <view class="no-login">
+          <text class="ellipsis">{{ userInfo.nickname }}</text>
+        </view>
+      </view>
+      <view class="setting">
+        <navigator url="/modules/settingModule/pages/settings/settings"> 设置 </navigator>
+      </view>
+    </view>
+
+    <!-- 订单面板 -->
+    <view class="order section">
+      <view class="order-title-wrap">
+        <text class="title">本月数据</text>
+        <!-- <text class="more">查看更多></text> -->
+      </view>
+      <view class="order-content-wrap">
+        <view class="order-content-item">
+            <view>0</view>
+            <text>单量</text>
+        </view>
+        <view class="order-content-item">
+            <view>100%</view>
+            <text>准时上门率</text>
+        </view>
+        <view class="order-content-item">
+            <view>100%</view>
+            <text>心赞率</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
